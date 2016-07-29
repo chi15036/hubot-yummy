@@ -24,7 +24,8 @@ module.exports = (robot) ->
     "星星",
     "1+",
     "聖淵",
-    "p2"
+    "p2",
+    "小李姿"
   }
 
   robot.brain.set 'person_name', person_name
