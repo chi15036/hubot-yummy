@@ -7,10 +7,11 @@ module.exports = (robot) ->
     robot.hear /.*/, (res) ->
       name =  res.message.user.name
       text = res.message.text
+      room = res.message.room
       nowTime = new Date().getTime()
-      time = moment(nowTime).format('YYYY-MM-DD HH:mm')
+      time = moment(nowTime).zone(8).format('YYYY-MM-DD HH:mm')
 
-      message = name: name, text: text, time: time
+      message = name: name, text: text, time: time,room: room
 
       conversation.push(message)
       robot.brain.set 'conversation',conversation
@@ -22,7 +23,7 @@ module.exports = (robot) ->
 
       logs = ""
 
-      for log in conversation
+      for log in conversation when log.room is res.message.room
         test = JSON.stringify(log)
         logs = "#{logs} #{test}\n"
 
