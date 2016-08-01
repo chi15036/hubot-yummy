@@ -22,6 +22,7 @@
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^4.0.1",
+    "moment": "^2.14.1",
     "nconf": ">=0.7.1",
     "pb-hubot": "0.0.3",
     "request": ">=2.51.0"
