@@ -9,7 +9,7 @@ module.exports = (robot) ->
       text = res.message.text
       room = res.message.room
       nowTime = new Date().getTime()
-      time = moment(nowTime).zone(8).format('YYYY-MM-DD HH:mm')
+      time = moment(nowTime).zone("08:00").format('YYYY-MM-DD HH:mm')
 
       message = name: name, text: text, time: time,room: room
 
